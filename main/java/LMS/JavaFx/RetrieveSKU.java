@@ -1,9 +1,12 @@
 package LMS.JavaFx;
 
 import LMS.Connection.InsertFiles.Insert;
+
 import javafx.application.Application;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
@@ -15,24 +18,27 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
+
 import javafx.stage.Stage;
+
 import org.jetbrains.annotations.Contract;
 
 import org.krysalis.barcode4j.impl.code128.Code128Bean;
 import org.krysalis.barcode4j.output.bitmap.BitmapCanvasProvider;
 
 import java.awt.image.BufferedImage;
+
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Properties;
 import java.util.TreeMap;
 
-/*how to position combo box javafx*/
 public class RetrieveSKU extends Application {
 
     private final Map<String, String[]> map = new TreeMap<>();
@@ -44,8 +50,7 @@ public class RetrieveSKU extends Application {
     private final ComboBox<String> shelf = new ComboBox<>();
     private final ComboBox<Integer> bin = new ComboBox<>();
     private int code_1 = 0, code_2 = 0;
-    /*public static int i = 1;*/
-    Insert islam = new Insert();
+    Insert insert = new Insert();
     private final char[] firstIDLetter = new char[1];
     private final char[] secondIDLetter = new char[1];
 
@@ -413,7 +418,7 @@ public class RetrieveSKU extends Application {
             }
             // first i must retrieve values from here, than after than i need to return these values
             createBarcode("Comp2.png", getSKU());
-            islam.insert(area.getValue(), row.getValue(),row_area.getValue(),shelf.getValue(),bin.getValue(),companies.getValue(),code_1,products.getValue(),code_2,getSKU(),"C://Users/Emir/OneDrive/Documents/Comp1.png");
+            insert.insert(area.getValue(), row.getValue(),row_area.getValue(),shelf.getValue(),bin.getValue(),companies.getValue(),code_1,products.getValue(),code_2,getSKU(),"C://Users/Emir/OneDrive/Documents/Comp1.png");
         });
 
         FileInputStream input = new FileInputStream("C:/Users/Emir/OneDrive/Documents/Test6.jpeg");
