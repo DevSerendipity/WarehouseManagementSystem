@@ -8,10 +8,6 @@ public class ProductsEvent extends RetrieveSKU{
     private final Barcode barcode = new Barcode();
     private int code_2 = 0;
 
-    public int getCode2() {
-        return code_2;
-    }
-
     public void getProductEvent() {
         comboBoxes.getProducts().getSelectionModel().selectedItemProperty().addListener((selected, oldProd, newProd) -> {
 
@@ -269,9 +265,12 @@ public class ProductsEvent extends RetrieveSKU{
                 }
             }
             // first i must retrieve values from here, than after than i need to return these values
-            Barcode.createBarcode("Comp2.png", barcode.getSKU()); // need to take the method from RETRIEVE SKU AND ADD
+            barcode.createBarcode("Comp2.png", barcode.getSKU()); // need to take the method from RETRIEVE SKU AND ADD
             // inserting code to the database
             insert.insert(comboBoxes.getArea().getValue(), comboBoxes.getRow().getValue(), comboBoxes.getRowArea().getValue(), comboBoxes.getShelf().getValue(), comboBoxes.getBin().getValue(), comboBoxes.getCompanies().getValue(), companyEvent.getCode1(), comboBoxes.getProducts().getValue(), code_2, barcode.getSKU(), "C://Users/Emir/OneDrive/Documents/Comp1.png");
         });
+    }
+    public int getCode2() {
+        return code_2;
     }
 }
