@@ -1,6 +1,5 @@
 package LMS.JavaFx;
 
-
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
@@ -13,9 +12,10 @@ import java.io.FileNotFoundException;
 
 public class BackgroundImg {
     public Background getBackground() throws FileNotFoundException {
-        FileInputStream input = new FileInputStream("C:/Users/Emir/OneDrive/Documents/Test6.jpeg");
+        FileInputStream input = new FileInputStream("C:/Users/Emir/OneDrive/Documents/NewOne/LibraryManagementSystem/src/main/resources/Test6.jpeg");
 
         Image image = new Image(input);
+
         BackgroundImage backgroundimage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, new BackgroundSize(1.0, 1.0, true, true, false, false));
 
         return new Background(backgroundimage);

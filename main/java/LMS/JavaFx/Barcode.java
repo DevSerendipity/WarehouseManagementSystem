@@ -10,7 +10,7 @@ import java.io.FileOutputStream;
 
 public class Barcode extends RetrieveSKU{
 
-    public static void createBarcode(String image_name, String myString) {
+    public void createBarcode(String image_name, String myString) {
         try {
             Code128Bean code128 = new Code128Bean();
             code128.setHeight(10f);
