@@ -22,7 +22,7 @@ public class ProductsEvent extends RetrieveSKU {
                     case "Jets":
                         code_2 = 10;
                         break;
-                    case "Military Aircrafts":
+                    case "Military Aircraft":
                         code_2 = 11;
                         break;
                     case "Satellites Launchers":
@@ -169,7 +169,7 @@ public class ProductsEvent extends RetrieveSKU {
                     case "Hybrid Vehicles":
                         code_2 = 58;
                         break;
-                    case "Hydrotec Military Vehicles":
+                    case "Hydro tec Military Vehicles":
                         code_2 = 59;
                         break;
                     case "Anaemia":
@@ -214,7 +214,7 @@ public class ProductsEvent extends RetrieveSKU {
                     case "Granada Launchers":
                         code_2 = 73;
                         break;
-                    case "Aircrafts, Ships":
+                    case "Aircraft":
                         code_2 = 74;
                         break;
                     case "Food":
