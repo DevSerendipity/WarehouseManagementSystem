@@ -1,4 +1,6 @@
-package LMS.JavaFx;
+package LMS.JavaFx.event;
+
+import LMS.JavaFx.ComboBoxes;
 
 public class CompanyEvent {
     private int code_1 = 0;

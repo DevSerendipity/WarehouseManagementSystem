@@ -1,13 +1,19 @@
-package LMS.JavaFx;
+package LMS.JavaFx.event;
 
 import LMS.Connection.InsertFiles.Insert;
 
-public class ProductsEvent extends RetrieveSKU{
+import LMS.JavaFx.Barcode;
+import LMS.JavaFx.ComboBoxes;
+import LMS.JavaFx.RetrieveSKU;
+
+public class ProductsEvent extends RetrieveSKU {
     private final ComboBoxes comboBoxes = new ComboBoxes();
     private final Insert insert = new Insert();
     private final Barcode barcode = new Barcode();
     private int code_2 = 0;
 
+
+    //add another file, where you will access the values stored NAME:VALUE (KEY/VALUE)
     public void getProductEvent() {
         comboBoxes.getProducts().getSelectionModel().selectedItemProperty().addListener((selected, oldProd, newProd) -> {
 
@@ -26,238 +32,238 @@ public class ProductsEvent extends RetrieveSKU{
                         code_2 = 13;
                         break;
                     case "Drink":
-                        code_2 = 15;
+                        code_2 = 14;
                         break;
                     case "Brewing":
-                        code_2 = 16;
+                        code_2 = 15;
                         break;
                     case "Mac":
-                        code_2 = 17;
+                        code_2 = 16;
                         break;
                     case "IPad":
-                        code_2 = 18;
+                        code_2 = 17;
                         break;
                     case "IPhone":
-                        code_2 = 19;
+                        code_2 = 18;
                         break;
                     case "Watch":
-                        code_2 = 20;
+                        code_2 = 19;
                         break;
                     case "TV":
-                        code_2 = 21;
+                        code_2 = 20;
                         break;
                     case "Agriculture":
-                        code_2 = 22;
+                        code_2 = 21;
                         break;
                     case "Automotive & Transportation":
-                        code_2 = 23;
+                        code_2 = 22;
                         break;
                     case "Construction":
-                        code_2 = 24;
+                        code_2 = 23;
                         break;
                     case "Electronics & Electric":
-                        code_2 = 25;
+                        code_2 = 24;
                         break;
                     case "Airplanes":
-                        code_2 = 26;
+                        code_2 = 25;
                         break;
                     case "Transport Aircraft":
-                        code_2 = 27;
+                        code_2 = 26;
                         break;
                     case "Autonomous Systems":
-                        code_2 = 28;
+                        code_2 = 27;
                         break;
                     case "Anesthesia Supplies":
-                        code_2 = 29;
+                        code_2 = 28;
                         break;
                     case "Compression":
-                        code_2 = 30;
+                        code_2 = 29;
                         break;
                     case "Laboratory Products":
-                        code_2 = 31;
+                        code_2 = 30;
                         break;
                     case "Infection Control":
-                        code_2 = 32;
+                        code_2 = 31;
                         break;
                     case "Skin/wound Management":
-                        code_2 = 33;
+                        code_2 = 32;
                         break;
                     case "Iron":
-                        code_2 = 34;
+                        code_2 = 33;
                         break;
                     case "Steel":
-                        code_2 = 35;
+                        code_2 = 34;
                         break;
                     case "Passenger Cars":
-                        code_2 = 36;
+                        code_2 = 35;
                         break;
                     case "Trucks":
-                        code_2 = 37;
+                        code_2 = 36;
                         break;
                     case "Vans":
-                        code_2 = 38;
+                        code_2 = 37;
                         break;
                     case "Buses":
-                        code_2 = 39;
+                        code_2 = 38;
                         break;
                     case "Monitors":
-                        code_2 = 40;
+                        code_2 = 39;
                         break;
                     case "Projectors":
-                        code_2 = 41;
+                        code_2 = 40;
                         break;
                     case "Desktops":
-                        code_2 = 42;
+                        code_2 = 41;
                         break;
                     case "Laptops":
-                        code_2 = 43;
+                        code_2 = 42;
                         break;
                     case "Ultra books":
-                        code_2 = 44;
+                        code_2 = 43;
                         break;
                     case "Adhesives":
-                        code_2 = 45;
+                        code_2 = 43;
                         break;
                     case "Advanced Printing Solutions":
-                        code_2 = 46;
+                        code_2 = 44;
                         break;
                     case "Animal Nutrition":
-                        code_2 = 47;
+                        code_2 = 45;
                         break;
                     case "Biomaterials":
-                        code_2 = 48;
+                        code_2 = 46;
                         break;
                     case "Clean Technologies":
-                        code_2 = 49;
+                        code_2 = 47;
                         break;
                     case "Electronic Components":
-                        code_2 = 50;
+                        code_2 = 48;
                         break;
                     case "PCBs":
-                        code_2 = 51;
+                        code_2 = 49;
                         break;
                     case "PCB Components":
-                        code_2 = 52;
+                        code_2 = 50;
                         break;
                     case "Computer Chips":
-                        code_2 = 53;
+                        code_2 = 51;
                         break;
                     case "Jet Engine":
-                        code_2 = 54;
+                        code_2 = 52;
                         break;
                     case "Gas Turbines":
-                        code_2 = 55;
+                        code_2 = 53;
                         break;
                     case "Hydroelectric Power":
-                        code_2 = 56;
+                        code_2 = 54;
                         break;
                     case "BackgroundImg":
-                        code_2 = 57;
+                        code_2 = 55;
                         break;
                     case "Wind Turbine":
-                        code_2 = 58;
+                        code_2 = 56;
                         break;
                     case "Motor Sports":
-                        code_2 = 59;
+                        code_2 = 57;
                         break;
                     case "Hybrid Vehicles":
-                        code_2 = 60;
+                        code_2 = 58;
                         break;
                     case "Hydrotec Military Vehicles":
-                        code_2 = 61;
+                        code_2 = 59;
                         break;
                     case "Anaemia":
-                        code_2 = 62;
+                        code_2 = 60;
                         break;
                     case "Cancer":
-                        code_2 = 63;
+                        code_2 = 61;
                         break;
                     case "Dermatology":
-                        code_2 = 64;
+                        code_2 = 62;
                         break;
                     case "Leukemia":
-                        code_2 = 65;
+                        code_2 = 63;
                         break;
                     case "Transplantation":
-                        code_2 = 66;
+                        code_2 = 64;
                         break;
                     case "Processed Beef":
-                        code_2 = 67;
+                        code_2 = 65;
                         break;
                     case "By-products":
-                        code_2 = 68;
+                        code_2 = 66;
                         break;
                     case "Processed Chicken":
-                        code_2 = 69;
+                        code_2 = 67;
                         break;
                     case "Energy":
-                        code_2 = 70;
+                        code_2 = 68;
                         break;
                     case "Infrastructure":
-                        code_2 = 71;
+                        code_2 = 69;
                         break;
                     case "Consumer Electronics":
-                        code_2 = 72;
+                        code_2 = 70;
                         break;
                     case "Rifles":
-                        code_2 = 73;
+                        code_2 = 71;
                         break;
                     case "Bombs":
-                        code_2 = 74;
+                        code_2 = 72;
                         break;
                     case "Granada Launchers":
-                        code_2 = 75;
+                        code_2 = 73;
                         break;
                     case "Aircrafts, Ships":
-                        code_2 = 76;
+                        code_2 = 74;
                         break;
                     case "Food":
-                        code_2 = 77;
+                        code_2 = 75;
                         break;
                     case "Snack":
-                        code_2 = 78;
+                        code_2 = 76;
                         break;
                     case "Beverage":
-                        code_2 = 78;
+                        code_2 = 77;
                         break;
                     case "Cardiovascular":
-                        code_2 = 79;
+                        code_2 = 78;
                         break;
                     case "Diabetes & Metabolic":
-                        code_2 = 80;
+                        code_2 = 79;
                         break;
                     case "Immune System":
-                        code_2 = 81;
+                        code_2 = 80;
                         break;
                     case "Infections & Infectious":
-                        code_2 = 82;
+                        code_2 = 81;
                         break;
                     case "Phones":
-                        code_2 = 83;
+                        code_2 = 82;
                         break;
                     case "Tables":
-                        code_2 = 84;
+                        code_2 = 83;
                         break;
                     case "Watches":
-                        code_2 = 85;
+                        code_2 = 84;
                         break;
                     case "Mobile Accessories":
-                        code_2 = 86;
+                        code_2 = 85;
                         break;
                     case "Real Estate":
-                        code_2 = 87;
+                        code_2 = 86;
                         break;
                     case "Finance":
-                        code_2 = 88;
+                        code_2 = 87;
                         break;
                     case "Commercial Vehicles":
-                        code_2 = 89;
+                        code_2 = 88;
                         break;
                     case "Motorcycles":
-                        code_2 = 90;
+                        code_2 = 89;
                         break;
                     case "Engines":
-                        code_2 = 91;
+                        code_2 = 90;
                         break;
                     case "Turbo Machinery":
                         code_2 = 91;
