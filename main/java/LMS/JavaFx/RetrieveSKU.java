@@ -1,14 +1,22 @@
 package LMS.JavaFx;
 
+import LMS.JavaFx.event.CompanyEvent;
+import LMS.JavaFx.event.ProductsEvent;
+
 import javafx.application.Application;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+
 import javafx.stage.Stage;
+
 import java.io.IOException;
+
 import java.util.Arrays;
 import java.util.Properties;
 
