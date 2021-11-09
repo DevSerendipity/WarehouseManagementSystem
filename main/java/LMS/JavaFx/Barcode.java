@@ -1,6 +1,5 @@
 package LMS.JavaFx;
 
-import org.jetbrains.annotations.Contract;
 import org.krysalis.barcode4j.impl.code128.Code128Bean;
 import org.krysalis.barcode4j.output.bitmap.BitmapCanvasProvider;
 
@@ -8,9 +7,12 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 
+import static LMS.JavaFx.event.CompanyEvent.*;
+import static LMS.JavaFx.event.ProductsEvent.getCode2;
+
 public class Barcode extends RetrieveSKU{
 
-    public void createBarcode(String image_name, String myString) {
+    public static void createBarcode(String image_name, String myString) {
         try {
             Code128Bean code128 = new Code128Bean();
             code128.setHeight(10f);
@@ -21,8 +23,8 @@ public class Barcode extends RetrieveSKU{
             BitmapCanvasProvider canvas = new BitmapCanvasProvider(baos, "image/x-png", 300, BufferedImage.TYPE_BYTE_BINARY, false, 0);
             code128.generateBarcode(canvas, myString);
             canvas.finish();
-            //write to png file
-            FileOutputStream fos = new FileOutputStream("C:/Users/Emir/OneDrive/Documents/" + image_name);
+            //write to png file and later on get the compnay and product name on the barcode name
+            FileOutputStream fos = new FileOutputStream("C:/coding/programming related/Output/PlaceWherePostOutputsFromFiles/" + image_name);
             fos.write(baos.toByteArray());
             fos.flush();
             fos.close();
@@ -30,6 +32,6 @@ public class Barcode extends RetrieveSKU{
             e.getStackTrace();
         }
     }
-    @Contract(pure = true)
-    public String getSKU() { return (companyEvent.getCode1() + "" + productsEvent.getCode2() + "" + companyEvent.getFirstIDLetter(0) + companyEvent.getSecondIDLetter(0));}
+    public  String getSKU() {
+        return (getProductCodeOne() + "" + getFirstIDLetter(0) + "" + getCode2() + "" + getSecondIDLetter(0));}
 }
