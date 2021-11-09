@@ -16,25 +16,21 @@ import static LMS.InsertFiles.Insert.insert;
 import static LMS.JavaFx.Barcode.createBarcode;
 import static LMS.JavaFx.ComboBoxes.*;
 import static LMS.JavaFx.event.CompanyEvent.getProductCodeOne;
-import static LMS.JavaFx.event.CompanyEvent.getCompanyEvent;
 import static LMS.JavaFx.event.ProductsEvent.getCode2;
-import static LMS.JavaFx.event.ProductsEvent.getProductEvent;
 
 public class RetrieveSKU extends Application {
-    private final ComboBoxes cb = new ComboBoxes();
-    private final BackgroundImg background = new BackgroundImg();
 
     private void fillMap() throws IOException {
         Properties prop = new Properties();
         prop.load(this.getClass().getResourceAsStream("/companyProperty"));
-        prop.forEach((key, value) -> cb.getMap().put(key.toString(), value.toString().split(",")));
-        /*cb.getMap().forEach((k, v) -> System.out.println(k + ": " + Arrays.toString(v)));*/
+        prop.forEach((key, value) -> new ComboBoxes().getMap().put(key.toString(), value.toString().split(",")));
+        /*new ComboBoxes().getMap().forEach((k, v) -> System.out.println(k + ": " + Arrays.toString(v)));*/
     }
 
     public static void main(String[] args) {
         Application.launch(args);
         Barcode barcode = new Barcode();
-        createBarcode("Comp1.png", barcode.getSKU()); // need to take the method from RETRIEVE SKU AND ADD
+        createBarcode("BarcodeImage.png", barcode.getSKU());
         System.out.println("image inserted");
         insert(getArea().getValue(), getRow().getValue(), getRowArea().getValue(), getShelf().getValue(), getBin().getValue(), getCompanies().getValue(), getProductCodeOne(), getProducts().getValue(), getCode2(), barcode.getSKU(), "C:/Users/Emir/OneDrive/Documents/Comp1.png");
     }
@@ -44,15 +40,12 @@ public class RetrieveSKU extends Application {
         fillMap();
         stage.setTitle("ComboBoxSample");
         Scene scene = new Scene(new Group());
+        ComboBoxes cb = new ComboBoxes();
         cb.onInitialize();
-        getCompanyEvent();
-        System.out.println("below company in retrive");
-        getProductEvent();
-        System.out.println("below this product");
-
         GridPane grid = new GridPane();
         grid.setMinSize(400, 560);
         grid.setAlignment(Pos.CENTER);
+        BackgroundImg background = new BackgroundImg();
         grid.setBackground(background.getBackgroundImage());
         grid.setVgap(4);
         grid.setHgap(10);
