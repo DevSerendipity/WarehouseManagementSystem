@@ -1,89 +1,40 @@
 package LMS.JavaFx.event;
 
-import LMS.JavaFx.ComboBoxes;
+import static LMS.JavaFx.ComboBoxes.getCompanies;
 
-public class CompanyEvent {
-    private int code_1 = 0;
-    private final ComboBoxes comboBoxes = new ComboBoxes();
-    private final char[] firstIDLetter = new char[1];
-    private final char[] secondIDLetter = new char[1];
+public class CompanyEvent  {
+    private static int productCodeOne = 0;
+    private static final char[] firstIDLetter = new char[1];
+    private static final char[] secondIDLetter = new char[1];
 
-    public void getCompanyEvent(){
-        comboBoxes.getCompanies().getSelectionModel().selectedItemProperty().addListener((selected, oldComp, newComp) -> {
+    public static void getCompanyEvent(){
+        getCompanies().getSelectionModel().selectedItemProperty().addListener((selected, oldComp, newComp) -> {
             if (newComp != null) {
                 switch (newComp) {
-                    case "Volkswage Group":
-                        code_1 = 100;
-                        break;
-                    case "Daimler":
-                        code_1 = 101;
-                        break;
-                    case "Airbus":
-                        code_1 = 102;
-                        break;
-                    case "Anheuser-Busch InBev":
-                        code_1 = 103;
-                        break;
-                    case "BASF":
-                        code_1 = 104;
-                        break;
-                    case "Apple":
-                        code_1 = 105;
-                        break;
-                    case "Boeing":
-                        code_1 = 106;
-                        break;
-                    case "Cardinal Health":
-                        code_1 = 107;
-                        break;
-                    case "Dell":
-                        code_1 = 108;
-                        break;
-                    case "China Baowu Steel Group":
-                        code_1 = 109;
-                        break;
-                    case "DowDuPont":
-                        code_1 = 110;
-                        break;
-                    case "Foxconn":
-                        code_1 = 111;
-                        break;
-                    case "General Electronics":
-                        code_1 = 112;
-                        break;
-                    case "General Motors":
-                        code_1 = 113;
-                        break;
-                    case "Hoffmann-La Roche":
-                        code_1 = 114;
-                        break;
-                    case "JBS S.A.":
-                        code_1 = 115;
-                        break;
-                    case "Nippon Steel & Sumitomo Metal":
-                        code_1 = 116;
-                        break;
-                    case "Norinco":
-                        code_1 = 117;
-                        break;
-                    case "PepsiCo":
-                        code_1 = 118;
-                        break;
-                    case "Pfizer":
-                        code_1 = 119;
-                        break;
-                    case "POSCO":
-                        code_1 = 120;
-                        break;
-                    case "Samsung Electronics":
-                        code_1 = 121;
-                        break;
-                    case "Sinochem":
-                        code_1 = 122;
-                        break;
-                    case "Toyota Group":
-                        code_1 = 123;
-                        break;
+                    case "Volkswagen Group" -> productCodeOne = 100;
+                    case "Daimler" -> productCodeOne = 101;
+                    case "Airbus" -> productCodeOne = 102;
+                    case "Anheuser-Busch InBev" -> productCodeOne = 103;
+                    case "BASF" -> productCodeOne = 104;
+                    case "Apple" -> productCodeOne = 105;
+                    case "Boeing" -> productCodeOne = 106;
+                    case "Cardinal Health" -> productCodeOne = 107;
+                    case "Dell" -> productCodeOne = 108;
+                    case "China Baowu Steel Group" -> productCodeOne = 109;
+                    case "DowDuPont" -> productCodeOne = 110;
+                    case "Foxconn" -> productCodeOne = 111;
+                    case "General Electronics" -> productCodeOne = 112;
+                    case "General Motors" -> productCodeOne = 113;
+                    case "Hoffmann-La Roche" -> productCodeOne = 114;
+                    case "JBS S.A." -> productCodeOne = 115;
+                    case "Nippon Steel & Sumitomo Metal" -> productCodeOne = 116;
+                    case "Norinco" -> productCodeOne = 117;
+                    case "PepsiCo" -> productCodeOne = 118;
+                    case "Pfizer" -> productCodeOne = 119;
+                    case "POSCO" -> productCodeOne = 120;
+                    case "Samsung Electronics" -> productCodeOne = 121;
+                    case "Sinochem" -> productCodeOne = 122;
+                    case "Toyota Group" -> productCodeOne = 123;
                 }
             }
             assert newComp != null;
@@ -91,15 +42,15 @@ public class CompanyEvent {
             secondIDLetter[0] = newComp.toUpperCase().charAt(newComp.length() - 1);
         });
     }
-    public int getCode1() {
-        return code_1;
+    public static int getProductCodeOne() {
+        return productCodeOne;
     }
 
-    public int getFirstIDLetter(int index) {
+    public static int getFirstIDLetter(int index) {
         return firstIDLetter[index];
     }
 
-    public int getSecondIDLetter(int index) {
+    public static int getSecondIDLetter(int index) {
         return secondIDLetter[index];
     }
 }
