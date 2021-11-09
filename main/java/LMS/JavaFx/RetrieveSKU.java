@@ -20,7 +20,7 @@ import static LMS.JavaFx.event.ProductsEvent.getProductCode;
 
 public class RetrieveSKU extends Application {
 
-    private void fillMap() throws IOException {
+    private void loadingProperties() throws IOException {
         Properties prop = new Properties();
         prop.load(this.getClass().getResourceAsStream("/companyProperty"));
         prop.forEach((key, value) -> new ComboBoxes().getMap().put(key.toString(), value.toString().split(",")));
@@ -32,16 +32,18 @@ public class RetrieveSKU extends Application {
         Barcode barcode = new Barcode();
         createBarcode("BarcodeImage.png", barcode.getSKU());
         System.out.println("image inserted");
-        insert(getArea().getValue(), getRow().getValue(), getRowArea().getValue(), getShelf().getValue(), getBin().getValue(), getCompanies().getValue(), getCompanyCode(), getProducts().getValue(), getProductCode(), barcode.getSKU(), "C:/Users/Emir/OneDrive/Documents/Comp1.png");
+        insert(getArea().getValue(), getRow().getValue(), getRowArea().getValue(), getShelf().getValue(),
+                getBin().getValue(), getCompanies().getValue(), getCompanyCode(), getProducts().getValue()
+                , getProductCode(), barcode.getSKU(), "C:/Users/Emir/OneDrive/Documents/Comp1.png");
     }
 
     @Override
     public void start(Stage stage) throws IOException {
-        fillMap();
+        loadingProperties();
         stage.setTitle("ComboBoxSample");
         Scene scene = new Scene(new Group());
         ComboBoxes cb = new ComboBoxes();
-        cb.onInitialize();
+        cb.Initialize();
         GridPane grid = new GridPane();
         grid.setMinSize(400, 560);
         grid.setAlignment(Pos.CENTER);

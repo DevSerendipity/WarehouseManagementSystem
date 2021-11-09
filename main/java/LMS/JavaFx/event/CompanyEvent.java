@@ -7,8 +7,9 @@ public class CompanyEvent  {
     private static final char[] firstAsciLetterOfCompany = new char[1];
     private static final char[] secondAsciLetterOfCompany = new char[1];
 
-    public static void getCompanyEvent(){
-        ComboBoxes.getCompanies().getSelectionModel().selectedItemProperty().addListener((selectedCompany, oldCompany, newCompany) -> {
+    public static void getCompanyCodeEvent(){
+        ComboBoxes.getCompanies().getSelectionModel().selectedItemProperty()
+                .addListener((selectedCompany, oldCompany, newCompany) -> {
             if (newCompany != null) {
                 switch (newCompany) {
                     case "Volkswagen Group" -> companyCode = 100;
@@ -39,7 +40,8 @@ public class CompanyEvent  {
             }
             assert newCompany != null;
             firstAsciLetterOfCompany[0] = newCompany.toUpperCase().charAt(0);
-            secondAsciLetterOfCompany[0] = newCompany.toUpperCase().charAt(newCompany.length() - 1);
+            secondAsciLetterOfCompany[0] =
+                    newCompany.toUpperCase().charAt(newCompany.length() - 1);
         });
     }
     public static int getCompanyCode() {

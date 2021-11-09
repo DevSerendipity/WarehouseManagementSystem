@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
-import static LMS.JavaFx.event.CompanyEvent.getCompanyEvent;
-import static LMS.JavaFx.event.ProductsEvent.getProductEvent;
+import static LMS.JavaFx.event.CompanyEvent.getCompanyCodeEvent;
+import static LMS.JavaFx.event.ProductsEvent.getProductCodeEvent;
 
 
 public class ComboBoxes {
@@ -53,15 +53,16 @@ public class ComboBoxes {
     }
 
 
-    public void onInitialize() {
+    public void Initialize() {
         getArea().getItems().addAll("Area 1","Area 2");
         getRow().getItems().addAll("A1","A2","B1","B2");
         getRowArea().getItems().addAll("RA1","RA2","RA3");
         getShelf().getItems().addAll("A","B","C");
         getBin().getItems().addAll(1,2,3);
         getCompanies().getItems().setAll(new ArrayList<>(map.keySet()));
-        getCompanies().setOnAction(e -> getProducts().getItems().setAll(map.get(getCompanies().getSelectionModel().getSelectedItem())));
-        getCompanyEvent();
-        getProductEvent();
+        getCompanies().setOnAction(e -> getProducts().getItems()
+                .setAll(map.get(getCompanies().getSelectionModel().getSelectedItem())));
+        getCompanyCodeEvent();
+        getProductCodeEvent();
     }
 }
