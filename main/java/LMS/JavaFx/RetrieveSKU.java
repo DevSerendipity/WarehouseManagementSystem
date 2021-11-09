@@ -15,8 +15,8 @@ import java.util.Properties;
 import static LMS.InsertFiles.Insert.insert;
 import static LMS.JavaFx.Barcode.createBarcode;
 import static LMS.JavaFx.ComboBoxes.*;
-import static LMS.JavaFx.event.CompanyEvent.getProductCodeOne;
-import static LMS.JavaFx.event.ProductsEvent.getCode2;
+import static LMS.JavaFx.event.CompanyEvent.getCompanyCode;
+import static LMS.JavaFx.event.ProductsEvent.getProductCode;
 
 public class RetrieveSKU extends Application {
 
@@ -32,7 +32,7 @@ public class RetrieveSKU extends Application {
         Barcode barcode = new Barcode();
         createBarcode("BarcodeImage.png", barcode.getSKU());
         System.out.println("image inserted");
-        insert(getArea().getValue(), getRow().getValue(), getRowArea().getValue(), getShelf().getValue(), getBin().getValue(), getCompanies().getValue(), getProductCodeOne(), getProducts().getValue(), getCode2(), barcode.getSKU(), "C:/Users/Emir/OneDrive/Documents/Comp1.png");
+        insert(getArea().getValue(), getRow().getValue(), getRowArea().getValue(), getShelf().getValue(), getBin().getValue(), getCompanies().getValue(), getCompanyCode(), getProducts().getValue(), getProductCode(), barcode.getSKU(), "C:/Users/Emir/OneDrive/Documents/Comp1.png");
     }
 
     @Override

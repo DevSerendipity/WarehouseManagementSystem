@@ -8,7 +8,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 
 import static LMS.JavaFx.event.CompanyEvent.*;
-import static LMS.JavaFx.event.ProductsEvent.getCode2;
+import static LMS.JavaFx.event.ProductsEvent.getProductCode;
 
 public class Barcode extends RetrieveSKU{
 
@@ -33,5 +33,5 @@ public class Barcode extends RetrieveSKU{
         }
     }
     public  String getSKU() {
-        return (getProductCodeOne() + "" + getFirstIDLetter(0) + "" + getCode2() + "" + getSecondIDLetter(0));}
+        return (getCompanyCode() + "" + getFirstAsciLetterOfCompany(0) + "" + getProductCode() + "" + getSecondAsciLetterOfCompany(0));}
 }
