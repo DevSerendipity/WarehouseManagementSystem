@@ -24,7 +24,7 @@ public class Barcode extends RetrieveSKU{
             code128.generateBarcode(canvas, myString);
             canvas.finish();
             //write to png file and later on get the compnay and product name on the barcode name
-            FileOutputStream fos = new FileOutputStream("C:/coding/programming related/Output/PlaceWherePostOutputsFromFiles/" + image_name);
+            FileOutputStream fos = new FileOutputStream("src/main/resources/Output/" + image_name);
             fos.write(baos.toByteArray());
             fos.flush();
             fos.close();
