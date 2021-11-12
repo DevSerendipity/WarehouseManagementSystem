@@ -10,7 +10,7 @@ import java.io.FileOutputStream;
 import static LMS.JavaFx.event.CompanyEvent.*;
 import static LMS.JavaFx.event.ProductsEvent.getProductCode;
 
-public class Barcode extends RetrieveSKU{
+public class Barcode{
 
     public static void createBarcode(String image_name, String myString) {
         try {
