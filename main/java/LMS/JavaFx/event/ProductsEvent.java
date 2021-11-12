@@ -1,13 +1,13 @@
 package LMS.JavaFx.event;
 
-import LMS.JavaFx.ComboBoxes;
+import LMS.JavaFx.ComboBoxProperties;
 
 public class ProductsEvent {
 
     private static int productCode = 0;
 
     public static void getProductCodeEvent() {
-        ComboBoxes.getProducts().getSelectionModel().selectedItemProperty()
+        ComboBoxProperties.getProducts().getSelectionModel().selectedItemProperty()
                 .addListener((selectedProduct, oldProduct, newProduct) -> {
             if (newProduct != null) {
                 switch (newProduct) {

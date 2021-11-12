@@ -1,6 +1,6 @@
 package LMS.JavaFx.event;
 
-import LMS.JavaFx.ComboBoxes;
+import LMS.JavaFx.ComboBoxProperties;
 
 public class CompanyEvent  {
     private static int companyCode = 0;
@@ -8,7 +8,7 @@ public class CompanyEvent  {
     private static final char[] secondAsciLetterOfCompany = new char[1];
 
     public static void getCompanyCodeEvent(){
-        ComboBoxes.getCompanies().getSelectionModel().selectedItemProperty()
+        ComboBoxProperties.getCompanies().getSelectionModel().selectedItemProperty()
                 .addListener((selectedCompany, oldCompany, newCompany) -> {
             if (newCompany != null) {
                 switch (newCompany) {
@@ -44,9 +44,7 @@ public class CompanyEvent  {
                     newCompany.toUpperCase().charAt(newCompany.length() - 1);
         });
     }
-    public static int getCompanyCode() {
-        return companyCode;
-    }
+    public static int getCompanyCode() {return companyCode;}
 
     public static int getFirstAsciLetterOfCompany(int index) {
         return firstAsciLetterOfCompany[index];
