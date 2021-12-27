@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LMS.JavaFx.JavafxController">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="0.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <AnchorPane id=".bodybg" styleClass="bodybg">
+        <Label layoutX="51.0" layoutY="47.0" text="Area" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="50.0" />
+        <Label layoutX="50.0" layoutY="121.0" text="Row" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="120.0" />
+        <Label layoutX="48.0" layoutY="166.0" text="Row Area" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="187.0" />
+        <Label layoutX="48.0" layoutY="198.0" text="Shelf" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="252.0" />
+        <Label layoutX="43.0" layoutY="318.0" text="Bin" AnchorPane.leftAnchor="43.0" AnchorPane.topAnchor="318.0" />
+        <Label layoutX="35.0" layoutY="384.0" text="Companies" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="384.0" />
+        <Label layoutX="39.0" layoutY="459.0" text="Products" AnchorPane.leftAnchor="39.0" AnchorPane.topAnchor="459.0" />
+        <ComboBox layoutX="109.0" layoutY="46.0"  prefWidth="150.0" AnchorPane.leftAnchor="110.0" />
+        <ComboBox layoutX="109.0" layoutY="116.0"  prefWidth="150.0" AnchorPane.leftAnchor="110.0" />
+        <ComboBox layoutX="110.0" layoutY="183.0"  prefWidth="150.0" AnchorPane.leftAnchor="110.0" />
+        <ComboBox layoutX="109.0" layoutY="248.0" prefWidth="150.0" AnchorPane.leftAnchor="110.0" />
+        <ComboBox layoutX="109.0" layoutY="314.0"  prefWidth="150.0" AnchorPane.leftAnchor="110.0" />
+        <ComboBox layoutX="109.0" layoutY="380.0" prefWidth="150.0" AnchorPane.leftAnchor="110.0" />
+        <ComboBox layoutX="109.0" layoutY="455.0"  prefWidth="150.0" AnchorPane.leftAnchor="110.0" />
+        <Button layoutY="544.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="313.0" text="Submit" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="544.0" />
+    </AnchorPane>
+</GridPane>
