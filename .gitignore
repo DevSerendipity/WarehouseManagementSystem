@@ -1,11 +1,11 @@
 # Compiled class file
 *.class
 ../.idea
+
 ../src/main/resources/Output/BarcodeImage.png
 
 ../src/main/java/ImportantThingsList.txt
 
-../src/main/resources/Test6.jpeg
 
 # Log file
 *.log
