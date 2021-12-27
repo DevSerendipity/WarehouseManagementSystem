@@ -6,6 +6,6 @@ module LMS.JavaFx {
     requires org.postgresql.jdbc;
     requires java.desktop;
 
-    opens LMS.JavaFx to javafx.fxml;
-    exports LMS.JavaFx;
+    opens WMS.JavaFx to javafx.fxml;
+    exports WMS.JavaFx;
 }

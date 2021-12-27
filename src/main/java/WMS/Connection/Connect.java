@@ -1,4 +1,4 @@
-package LMS.Connection;
+package WMS.Connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

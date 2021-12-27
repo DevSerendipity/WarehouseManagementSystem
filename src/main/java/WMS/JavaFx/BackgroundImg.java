@@ -1,4 +1,4 @@
-package LMS.JavaFx;
+package WMS.JavaFx;
 
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;

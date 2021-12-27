@@ -1,4 +1,4 @@
-package LMS.JavaFx;
+package WMS.JavaFx;
 
 import javafx.scene.control.ComboBox;
 
@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
-import static LMS.JavaFx.event.CompanyEvent.getCompanyCodeEvent;
-import static LMS.JavaFx.event.ProductsEvent.getProductCodeEvent;
+import static WMS.JavaFx.event.CompanyEvent.getCompanyCodeEvent;
+import static WMS.JavaFx.event.ProductsEvent.getProductCodeEvent;
 
 
 public class ComboBoxProperties {

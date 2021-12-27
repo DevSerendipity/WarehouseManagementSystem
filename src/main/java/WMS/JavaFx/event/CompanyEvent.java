@@ -1,6 +1,6 @@
-package LMS.JavaFx.event;
+package WMS.JavaFx.event;
 
-import LMS.JavaFx.ComboBoxProperties;
+import WMS.JavaFx.ComboBoxProperties;
 
 public class CompanyEvent  {
     private static int companyCode = 0;
