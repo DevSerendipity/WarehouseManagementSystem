@@ -1,3 +1,3 @@
 # Warehouse Management System
 
-### Currently being refactored
+Project Built for exercising adding and retrieving values from the database. With the help of javafx as a manual input 
