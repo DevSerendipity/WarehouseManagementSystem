@@ -2,11 +2,7 @@
 *.class
 .idea
 
-../src/main/resources/Output/BarcodeImage.png
-
-../src/main/java/ImportantThingsList.txt
-
-
+LibraryManagemenSystem.iml
 # Log file
 *.log
 ./target
