@@ -1,6 +1,6 @@
 # Compiled class file
 *.class
-../.idea
+.idea
 
 ../src/main/resources/Output/BarcodeImage.png
 
