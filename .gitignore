@@ -2,7 +2,7 @@
 *.class
 .idea
 
-LibraryManagemenSystem.iml
+WarehouseManagementSystem.iml
 # Log file
 *.log
 /target/
