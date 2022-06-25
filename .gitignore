@@ -5,6 +5,7 @@
 WarehouseManagementSystem.iml
 # Log file
 *.log
+src/main/resources/Output
 /target/
 # BlueJ files
 *.ctxt
