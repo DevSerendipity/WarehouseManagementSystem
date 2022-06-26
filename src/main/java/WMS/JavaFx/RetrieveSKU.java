@@ -1,4 +1,4 @@
-package WMS.JavaFx;
+package wms.javafx;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -13,11 +13,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-import static WMS.InsertFiles.Insert.insertWarehouseItem;
-import static WMS.JavaFx.Barcode.createBarcode;
-import static WMS.JavaFx.ComboBoxProperties.*;
-import static WMS.JavaFx.event.CompanyEvent.getCompanyCode;
-import static WMS.JavaFx.event.ProductsEvent.getProductCode;
+import static wms.InsertFiles.Insert.insertWarehouseItem;
+import static wms.javafx.Barcode.createBarcode;
+import static wms.javafx.ComboBoxProperties.*;
+import static wms.javafx.event.CompanyEvent.getCompanyCode;
+import static wms.javafx.event.ProductsEvent.getProductCode;
 
 public class RetrieveSKU extends Application {
 

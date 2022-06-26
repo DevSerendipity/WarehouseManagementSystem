@@ -1,6 +1,6 @@
-package WMS.JavaFx.event;
+package wms.javafx.event;
 
-import WMS.JavaFx.ComboBoxProperties;
+import wms.javafx.ComboBoxProperties;
 
 public class ProductsEvent {
 

@@ -1,4 +1,4 @@
-package WMS.JavaFx;
+package wms.javafx;
 
 import org.krysalis.barcode4j.impl.code128.Code128Bean;
 import org.krysalis.barcode4j.output.bitmap.BitmapCanvasProvider;
@@ -7,8 +7,8 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 
-import static WMS.JavaFx.event.CompanyEvent.*;
-import static WMS.JavaFx.event.ProductsEvent.getProductCode;
+import static wms.javafx.event.CompanyEvent.*;
+import static wms.javafx.event.ProductsEvent.getProductCode;
 
 public class Barcode{
 

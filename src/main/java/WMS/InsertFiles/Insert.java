@@ -1,9 +1,9 @@
-package WMS.InsertFiles;
+package wms.InsertFiles;
 
 import java.io.*;
 import java.sql.*;
 
-import static WMS.Connection.Connect.connection;
+import static wms.Connection.Connect.connection;
 
 public class Insert{
 
