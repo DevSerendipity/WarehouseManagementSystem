@@ -6,7 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.*;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
@@ -54,7 +54,7 @@ public class RetrieveSKU extends Application {
 
     private void comboBoxValueInitialization() {
         ComboBoxProperties comboBoxProperties = new ComboBoxProperties();
-        comboBoxProperties.InitializeComboBoxes();
+        comboBoxProperties.initializeComboBoxes();
     }
 
     private GridPane getGridProperties() throws FileNotFoundException {

@@ -4,7 +4,7 @@ import wms.javafx.ComboBoxProperties;
 
 public class ProductsEvent {
 
-    private static int productCode = 0;
+    private static int productCode;
 
     public static void getProductCodeEvent() {
         ComboBoxProperties.getProducts().getSelectionModel().selectedItemProperty()
@@ -94,6 +94,7 @@ public class ProductsEvent {
                             case "Motorcycles" -> productCode = 89;
                             case "Engines" -> productCode = 90;
                             case "Turbo Machinery" -> productCode = 91;
+                            default -> productCode = 0;
                         }
                     }
                 } );

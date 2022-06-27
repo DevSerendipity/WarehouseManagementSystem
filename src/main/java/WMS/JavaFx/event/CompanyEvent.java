@@ -3,10 +3,11 @@ package wms.javafx.event;
 import wms.javafx.ComboBoxProperties;
 
 public class CompanyEvent {
-    private static int companyCode = 0;
+
+    private static int companyCode;
     //what??
-    private static final char[] firstAsciLetterOfCompany = new char[ 1 ];
-    private static final char[] secondAsciLetterOfCompany = new char[ 1 ];
+    private static final char[] FIRST_ASCI_LETTER_OF_COMPANY = new char[ 1 ];
+    private static final char[] SECOND_ASCI_LETTER_OF_COMPANY = new char[ 1 ];
 
     public static void getCompanyCodeEvent() {
         ComboBoxProperties.getCompanies().getSelectionModel().selectedItemProperty()
@@ -37,21 +38,24 @@ public class CompanyEvent {
                             case "Samsung Electronics" -> companyCode = 121;
                             case "Sinochem" -> companyCode = 122;
                             case "Toyota Group" -> companyCode = 123;
+                            default -> companyCode = 0;
                         }
                     }
                     assert newCompany != null;
-                    firstAsciLetterOfCompany[ 0 ] = newCompany.toUpperCase().charAt( 0 );
-                    secondAsciLetterOfCompany[ 0 ] = newCompany.toUpperCase().charAt( newCompany.length() - 1 );
+                    FIRST_ASCI_LETTER_OF_COMPANY[ 0 ] = newCompany.toUpperCase().charAt( 0 );
+                    SECOND_ASCI_LETTER_OF_COMPANY[ 0 ] = newCompany.toUpperCase().charAt( newCompany.length() - 1 );
                 } );
     }
 
-    public static int getCompanyCode() {return companyCode;}
+    public static int getCompanyCode() {
+        return companyCode;
+    }
 
     public static int getFirstAsciLetterOfCompany( int index ) {
-        return firstAsciLetterOfCompany[ index ];
+        return FIRST_ASCI_LETTER_OF_COMPANY[ index ];
     }
 
     public static int getSecondAsciLetterOfCompany( int index ) {
-        return secondAsciLetterOfCompany[ index ];
+        return SECOND_ASCI_LETTER_OF_COMPANY[ index ];
     }
 }

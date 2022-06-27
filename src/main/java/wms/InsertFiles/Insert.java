@@ -1,9 +1,12 @@
 package wms.InsertFiles;
 
-import java.io.*;
-import java.sql.*;
+import wms.Connection.Connect;
 
-import static wms.Connection.Connect.connection;
+import java.io.File;
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class Insert {
 
@@ -16,11 +19,11 @@ public class Insert {
                                             String shelf, int bin, String manufacturer, int productCodeOne,
                                             String product, int productCodeTwo, String sku, String barcodeIMG ) {//
         // String picture
-        try ( Connection con = connection() ) {
+        try ( Connection con = Connect.connection() ) {
             try {
-                String sql = "INSERT INTO warehouse (warehouse_uid, warehouse_area, warehouse_row, row_area, shelf, " +
-                        "bin, manufacturer, product_code_one, product, product_code_two, sku, barcode_img) VALUES" +
-                        "(uuid_generate_v4(), ?,?,?,?,?,?,?,?,?,?,?)";
+                String sql = "INSERT INTO warehouse (warehouse_uid, warehouse_area, warehouse_row, row_area, shelf, "
+                        + "bin, manufacturer, product_code_one, product, product_code_two, sku, barcode_img) "
+                        + "VALUES" + "(uuid_generate_v4(), ?,?,?,?,?,?,?,?,?,?,?)";
                 File f = new File( barcodeIMG );
                 if ( !f.exists() ) {
                     System.out.println( "Image file not found. Terminating..." );
@@ -42,7 +45,7 @@ public class Insert {
                 e.printStackTrace();
             }
         } catch ( SQLException e ) {
-            e.getStackTrace();
+            System.out.println( e.getMessage() );
         }
     }
 }
