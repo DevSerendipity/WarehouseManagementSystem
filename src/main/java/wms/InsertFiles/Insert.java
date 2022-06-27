@@ -17,7 +17,7 @@ public class Insert {
      */
     public static void insertWarehouseItem( String warehouse_area, String warehouse_row, String row_area,
                                             String shelf, int bin, String manufacturer, int productCodeOne,
-                                            String product, int productCodeTwo, String sku, String barcodeIMG ) {//
+                                            String product, int productCodeTwo, String sku, String barcodeIMG ) {
         // String picture
         try ( Connection con = Connect.connection() ) {
             try {

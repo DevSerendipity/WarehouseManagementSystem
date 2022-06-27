@@ -1,17 +1,15 @@
 package wms.javafx;
 
 import javafx.scene.control.ComboBox;
+import wms.javafx.event.CompanyEvent;
+import wms.javafx.event.ProductsEvent;
 
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
-import static wms.javafx.event.CompanyEvent.getCompanyCodeEvent;
-import static wms.javafx.event.ProductsEvent.getProductCodeEvent;
-
-
 public class ComboBoxProperties {
-    private static final Map<String, String[]> keyValuesParForCompaniesAndProducts = new TreeMap<>();
+    private static final Map<String, String[]> KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS = new TreeMap<>();
     private static final ComboBox<String> COMPANIES = new ComboBox<>();
     private static final ComboBox<String> PRODUCTS = new ComboBox<>();
     private static final ComboBox<String> STORAGE_AREA = new ComboBox<>();
@@ -49,7 +47,7 @@ public class ComboBoxProperties {
     }
 
     public Map<String, String[]> getKeyValuesParForCompaniesAndProducts() {
-        return keyValuesParForCompaniesAndProducts;
+        return KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS;
     }
 
     public void initializeComboBoxes() {
@@ -58,10 +56,10 @@ public class ComboBoxProperties {
         getRowArea().getItems().addAll( "RA1", "RA2", "RA3" );
         getShelf().getItems().addAll( "A", "B", "C" );
         getBin().getItems().addAll( 1, 2, 3 );
-        getCompanies().getItems().setAll( new ArrayList<>( keyValuesParForCompaniesAndProducts.keySet() ) );
+        getCompanies().getItems().setAll( new ArrayList<>( KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS.keySet() ) );
         getCompanies().setOnAction( e -> getProducts().getItems().setAll(
-                keyValuesParForCompaniesAndProducts.get( getCompanies().getSelectionModel().getSelectedItem() ) ) );
-        getCompanyCodeEvent();
-        getProductCodeEvent();
+                KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS.get( getCompanies().getSelectionModel().getSelectedItem() ) ) );
+        CompanyEvent.getCompanyCodeEvent();
+        ProductsEvent.getProductCodeEvent();
     }
 }

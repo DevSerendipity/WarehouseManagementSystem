@@ -8,16 +8,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import wms.InsertFiles.Insert;
+import wms.javafx.event.CompanyEvent;
+import wms.javafx.event.ProductsEvent;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-import static wms.InsertFiles.Insert.insertWarehouseItem;
-import static wms.javafx.Barcode.createBarcode;
-import static wms.javafx.ComboBoxProperties.*;
-import static wms.javafx.event.CompanyEvent.getCompanyCode;
-import static wms.javafx.event.ProductsEvent.getProductCode;
 
 public class RetrieveSKU extends Application {
 
@@ -32,12 +30,15 @@ public class RetrieveSKU extends Application {
     public static void main( String[] args ) {
         Application.launch( args );
         Barcode barcode = new Barcode();
-        createBarcode( "BarcodeImage.png", barcode.getSKU() );
+        Barcode.createBarcode( "BarcodeImage.png", barcode.getSKU() );
         System.out.println( "image inserted" );
-        insertWarehouseItem( getStorageArea().getValue(), getWarehouseRow().getValue(), getRowArea().getValue(),
-                             getShelf().getValue(), getBin().getValue(), getCompanies().getValue(), getCompanyCode(),
-                             getProducts().getValue(), getProductCode(), barcode.getSKU(),
-                             "src/main/resources/Output/BarcodeImage.png" );
+        Insert.insertWarehouseItem( ComboBoxProperties.getStorageArea().getValue(), ComboBoxProperties.getWarehouseRow().getValue(),
+                                    ComboBoxProperties.getRowArea().getValue(),
+                                    ComboBoxProperties.getShelf().getValue(), ComboBoxProperties.getBin().getValue(),
+                                    ComboBoxProperties.getCompanies().getValue(), CompanyEvent.getCompanyCode(),
+                                    ComboBoxProperties.getProducts().getValue(), ProductsEvent.getProductCode(),
+                                    barcode.getSKU(),
+                                    "src/main/resources/Output/BarcodeImage.png" );
     }
 
     @Override public void start( Stage stage ) throws IOException {
@@ -80,18 +81,18 @@ public class RetrieveSKU extends Application {
 
     private void gridLayout( GridPane grid ) {
         grid.add( new Label( "Storage Area" ), 0, 0 );
-        grid.add( getStorageArea(), 1, 0 );
+        grid.add( ComboBoxProperties.getStorageArea(), 1, 0 );
         grid.add( new Label( "Row" ), 0, 1 );
-        grid.add( getWarehouseRow(), 1, 1 );
+        grid.add( ComboBoxProperties.getWarehouseRow(), 1, 1 );
         grid.add( new Label( "Row Area" ), 0, 2 );
-        grid.add( getRowArea(), 1, 2 );
+        grid.add( ComboBoxProperties.getRowArea(), 1, 2 );
         grid.add( new Label( "Shelf" ), 0, 3 );
-        grid.add( getShelf(), 1, 3 );
+        grid.add( ComboBoxProperties.getShelf(), 1, 3 );
         grid.add( new Label( "Bin" ), 0, 4 );
-        grid.add( getBin(), 1, 4 );
+        grid.add( ComboBoxProperties.getBin(), 1, 4 );
         grid.add( new Label( "Companies: " ), 0, 5 );
-        grid.add( getCompanies(), 1, 5 );
+        grid.add( ComboBoxProperties.getCompanies(), 1, 5 );
         grid.add( new Label( "Products: " ), 0, 6 );
-        grid.add( getProducts(), 1, 6 );
+        grid.add( ComboBoxProperties.getProducts(), 1, 6 );
     }
 }
