@@ -10,6 +10,10 @@ import java.sql.SQLException;
 
 public class Insert {
 
+    private Insert(){
+
+    }
+
     /**
      * @param sku        combining [productCodeOne + firstLetterOfCompanyToAsci  + productCodeTwo +
      *                   lastLetterOfCompanyToAsci - and storing it to a database
@@ -19,7 +23,7 @@ public class Insert {
                                             String shelf, int bin, String manufacturer, int productCodeOne,
                                             String product, int productCodeTwo, String sku, String barcodeIMG ) {
         // String picture
-        try ( Connection con = Connect.connection() ) {
+        try ( Connection con = Connect.connection()){
             try {
                 String sql = "INSERT INTO warehouse (warehouse_uid, warehouse_area, warehouse_row, row_area, shelf, "
                         + "bin, manufacturer, product_code_one, product, product_code_two, sku, barcode_img) "

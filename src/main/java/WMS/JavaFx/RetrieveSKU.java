@@ -32,7 +32,8 @@ public class RetrieveSKU extends Application {
         Barcode barcode = new Barcode();
         Barcode.createBarcode( "BarcodeImage.png", barcode.getSKU() );
         System.out.println( "image inserted" );
-        Insert.insertWarehouseItem( ComboBoxProperties.getStorageArea().getValue(), ComboBoxProperties.getWarehouseRow().getValue(),
+        Insert.insertWarehouseItem( ComboBoxProperties.getStorageArea().getValue(),
+                              ComboBoxProperties.getWarehouseRow().getValue(),
                                     ComboBoxProperties.getRowArea().getValue(),
                                     ComboBoxProperties.getShelf().getValue(), ComboBoxProperties.getBin().getValue(),
                                     ComboBoxProperties.getCompanies().getValue(), CompanyEvent.getCompanyCode(),

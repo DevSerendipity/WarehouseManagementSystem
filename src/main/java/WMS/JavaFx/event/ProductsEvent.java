@@ -4,6 +4,10 @@ import wms.javafx.ComboBoxProperties;
 
 public class ProductsEvent {
 
+    private ProductsEvent(){
+
+    }
+
     private static int productCode;
 
     public static void getProductCodeEvent() {

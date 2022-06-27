@@ -4,6 +4,10 @@ import wms.javafx.ComboBoxProperties;
 
 public class CompanyEvent {
 
+    private CompanyEvent(){
+
+    }
+
     private static int companyCode;
     //what??
     private static final char[] FIRST_ASCI_LETTER_OF_COMPANY = new char[ 1 ];
