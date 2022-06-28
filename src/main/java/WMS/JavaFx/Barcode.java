@@ -12,7 +12,7 @@ import java.io.FileOutputStream;
 public class Barcode {
 
     static final int BARCODE_HEIGHT = 10;
-    static final double MODULE_WIDTH = 0.3;
+    static final int MODULE_WIDTH = 1;
     static final int QUIET_ZONE_WIDTH = 10;
     public static void createBarcode( String image_name, String myString ) {
         try {
