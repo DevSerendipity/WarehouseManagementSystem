@@ -11,15 +11,15 @@ import java.io.FileOutputStream;
 
 public class Barcode {
 
+    final static int BARCODE_HEIGHT = 10;
+    final static double MODULE_WIDTH = 0.3;
+    final static int QUIET_ZONE_WIDTH = 10;
     public static void createBarcode( String image_name, String myString ) {
         try {
             Code128Bean code128 = new Code128Bean();
-            final int barcodeHeight = 10;
-            final double moduleWidth = 0.3;
-            final int quietZoneWidth = 10;
-            code128.setHeight( barcodeHeight );
-            code128.setModuleWidth( moduleWidth );
-            code128.setQuietZone( quietZoneWidth );
+            code128.setHeight( BARCODE_HEIGHT );
+            code128.setModuleWidth( MODULE_WIDTH );
+            code128.setQuietZone( QUIET_ZONE_WIDTH );
             code128.doQuietZone( true );
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             BitmapCanvasProvider canvas = new BitmapCanvasProvider( baos, "image/x-png", 300,
