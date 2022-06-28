@@ -11,9 +11,9 @@ import java.io.FileOutputStream;
 
 public class Barcode {
 
-    final static int BARCODE_HEIGHT = 10;
-    final static double MODULE_WIDTH = 0.3;
-    final static int QUIET_ZONE_WIDTH = 10;
+    static final int BARCODE_HEIGHT = 10;
+    static final double MODULE_WIDTH = 0.3;
+    static final int QUIET_ZONE_WIDTH = 10;
     public static void createBarcode( String image_name, String myString ) {
         try {
             Code128Bean code128 = new Code128Bean();
