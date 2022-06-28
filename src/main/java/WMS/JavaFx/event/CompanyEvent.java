@@ -2,9 +2,9 @@ package wms.javafx.event;
 
 import wms.javafx.ComboBoxProperties;
 
-public class CompanyEvent {
+public final class CompanyEvent {
 
-    private CompanyEvent(){
+    private CompanyEvent() {
 
     }
 

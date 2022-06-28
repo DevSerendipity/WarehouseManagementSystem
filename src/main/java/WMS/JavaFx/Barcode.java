@@ -36,7 +36,7 @@ public class Barcode {
     }
 
     public String getSKU() {
-        return ( CompanyEvent.getCompanyCode() + "" + CompanyEvent.getFirstAsciLetterOfCompany(
-                0 ) + "" + ProductsEvent.getProductCode() + "" + CompanyEvent.getSecondAsciLetterOfCompany( 0 ) );
+        return ( CompanyEvent.getCompanyCode() + "" + CompanyEvent.getFirstAsciLetterOfCompany( 0 ) + ""
+                + ProductsEvent.getProductCode() + "" + CompanyEvent.getSecondAsciLetterOfCompany( 0 ) );
     }
 }

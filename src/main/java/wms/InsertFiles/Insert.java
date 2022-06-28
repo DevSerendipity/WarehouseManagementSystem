@@ -8,9 +8,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class Insert {
+public final class Insert {
 
-    private Insert(){
+    private Insert() {
 
     }
 
@@ -19,11 +19,11 @@ public class Insert {
      *                   lastLetterOfCompanyToAsci - and storing it to a database
      * @param barcodeIMG unique image that will contain the SKU barcode
      */
-    public static void insertWarehouseItem( String warehouse_area, String warehouse_row, String row_area,
-                                            String shelf, int bin, String manufacturer, int productCodeOne,
-                                            String product, int productCodeTwo, String sku, String barcodeIMG ) {
+    public static void insertWarehouseItem( String warehouse_area, String warehouse_row, String row_area, String shelf,
+                                            int bin, String manufacturer, int productCodeOne, String product,
+                                            int productCodeTwo, String sku, String barcodeIMG ) {
         // String picture
-        try ( Connection con = Connect.connection()){
+        try ( Connection con = Connect.connection() ) {
             try {
                 String sql = "INSERT INTO warehouse (warehouse_uid, warehouse_area, warehouse_row, row_area, shelf, "
                         + "bin, manufacturer, product_code_one, product, product_code_two, sku, barcode_img) "

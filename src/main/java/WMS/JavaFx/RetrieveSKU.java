@@ -33,13 +33,12 @@ public class RetrieveSKU extends Application {
         Barcode.createBarcode( "BarcodeImage.png", barcode.getSKU() );
         System.out.println( "image inserted" );
         Insert.insertWarehouseItem( ComboBoxProperties.getStorageArea().getValue(),
-                              ComboBoxProperties.getWarehouseRow().getValue(),
+                                    ComboBoxProperties.getWarehouseRow().getValue(),
                                     ComboBoxProperties.getRowArea().getValue(),
                                     ComboBoxProperties.getShelf().getValue(), ComboBoxProperties.getBin().getValue(),
                                     ComboBoxProperties.getCompanies().getValue(), CompanyEvent.getCompanyCode(),
                                     ComboBoxProperties.getProducts().getValue(), ProductsEvent.getProductCode(),
-                                    barcode.getSKU(),
-                                    "src/main/resources/Output/BarcodeImage.png" );
+                                    barcode.getSKU(), "src/main/resources/Output/BarcodeImage.png" );
     }
 
     @Override public void start( Stage stage ) throws IOException {

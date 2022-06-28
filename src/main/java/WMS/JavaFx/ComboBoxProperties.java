@@ -57,8 +57,8 @@ public class ComboBoxProperties {
         getShelf().getItems().addAll( "A", "B", "C" );
         getBin().getItems().addAll( 1, 2, 3 );
         getCompanies().getItems().setAll( new ArrayList<>( KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS.keySet() ) );
-        getCompanies().setOnAction( e -> getProducts().getItems().setAll(
-                KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS.get( getCompanies().getSelectionModel().getSelectedItem() ) ) );
+        getCompanies().setOnAction( e -> getProducts().getItems().setAll( KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS.get(
+                getCompanies().getSelectionModel().getSelectedItem() ) ) );
         CompanyEvent.getCompanyCodeEvent();
         ProductsEvent.getProductCodeEvent();
     }
