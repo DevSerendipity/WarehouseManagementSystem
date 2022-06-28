@@ -1,65 +1,65 @@
-package WMS.JavaFx;
+package wms.javafx;
 
 import javafx.scene.control.ComboBox;
+import wms.javafx.event.CompanyEvent;
+import wms.javafx.event.ProductsEvent;
 
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
-import static WMS.JavaFx.event.CompanyEvent.getCompanyCodeEvent;
-import static WMS.JavaFx.event.ProductsEvent.getProductCodeEvent;
-
-
 public class ComboBoxProperties {
-    private static final Map<String, String[]> keyValuesParForCompaniesAndProducts = new TreeMap<>();
-    private static final ComboBox<String> companies = new ComboBox<>();
-    private static final ComboBox<String> products = new ComboBox<>();
-    private static final ComboBox<String> storageArea = new ComboBox<>();
-    private static final ComboBox<String> warehouse_row = new ComboBox<>();
-    private static final ComboBox<String> row_area = new ComboBox<>();
-    private static final ComboBox<String> shelf = new ComboBox<>();
-    private static final ComboBox<Integer> bin = new ComboBox<>();
+    private static final Map<String, String[]> KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS = new TreeMap<>();
+    private static final ComboBox<String> COMPANIES = new ComboBox<>();
+    private static final ComboBox<String> PRODUCTS = new ComboBox<>();
+    private static final ComboBox<String> STORAGE_AREA = new ComboBox<>();
+    private static final ComboBox<String> WAREHOUSE_ROW = new ComboBox<>();
+    private static final ComboBox<String> ROW_AREA = new ComboBox<>();
+    private static final ComboBox<String> SHELF = new ComboBox<>();
+    private static final ComboBox<Integer> BIN = new ComboBox<>();
 
     public static ComboBox<String> getCompanies() {
-        return companies;
+        return COMPANIES;
     }
 
-    public static ComboBox<String> getProducts() { return products;}
+    public static ComboBox<String> getProducts() {
+        return PRODUCTS;
+    }
 
     public static ComboBox<String> getStorageArea() {
-        return storageArea;
+        return STORAGE_AREA;
     }
 
     public static ComboBox<String> getWarehouseRow() {
-        return warehouse_row;
+        return WAREHOUSE_ROW;
     }
 
     public static ComboBox<String> getRowArea() {
-        return row_area;
+        return ROW_AREA;
     }
 
     public static ComboBox<String> getShelf() {
-        return shelf;
+        return SHELF;
     }
 
     public static ComboBox<Integer> getBin() {
-        return bin;
+        return BIN;
     }
 
     public Map<String, String[]> getKeyValuesParForCompaniesAndProducts() {
-        return keyValuesParForCompaniesAndProducts;
+        return KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS;
     }
 
-   public void InitializeComboBoxes() {
-        getStorageArea().getItems().addAll("Area 1","Area 2");
-        getWarehouseRow().getItems().addAll("A1","A2","B1","B2");
-        getRowArea().getItems().addAll("RA1","RA2","RA3");
-        getShelf().getItems().addAll("A","B","C");
-        getBin().getItems().addAll(1,2,3);
-        getCompanies().getItems().setAll(new ArrayList<>(keyValuesParForCompaniesAndProducts.keySet()));
-        getCompanies().setOnAction(e -> getProducts().getItems()
-                .setAll(keyValuesParForCompaniesAndProducts.get(getCompanies().getSelectionModel().getSelectedItem())));
-        getCompanyCodeEvent();
-        getProductCodeEvent();
+    public void initializeComboBoxes() {
+        getStorageArea().getItems().addAll( "Area 1", "Area 2" );
+        getWarehouseRow().getItems().addAll( "A1", "A2", "B1", "B2" );
+        getRowArea().getItems().addAll( "RA1", "RA2", "RA3" );
+        getShelf().getItems().addAll( "A", "B", "C" );
+        getBin().getItems().addAll( 1, 2, 3 );
+        getCompanies().getItems().setAll( new ArrayList<>( KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS.keySet() ) );
+        getCompanies().setOnAction( e -> getProducts().getItems().setAll( KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS.get(
+                getCompanies().getSelectionModel().getSelectedItem() ) ) );
+        CompanyEvent.getCompanyCodeEvent();
+        ProductsEvent.getProductCodeEvent();
     }
 }
