@@ -14,9 +14,9 @@ public class Barcode {
     public static void createBarcode( String image_name, String myString ) {
         try {
             Code128Bean code128 = new Code128Bean();
-            int barcodeHeight = 10;
-            double moduleWidth = 0.3;
-            int quietZoneWidth = 10;
+            final int barcodeHeight = 10;
+            final double moduleWidth = 0.3;
+            final int quietZoneWidth = 10;
             code128.setHeight( barcodeHeight );
             code128.setModuleWidth( moduleWidth );
             code128.setQuietZone( quietZoneWidth );
