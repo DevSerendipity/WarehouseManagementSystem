@@ -14,8 +14,8 @@ public final class CompanyEvent {
     }
 
     private static int companyCode;
-    private static char FIRST_LETTER_OF_COMPANY_NAME = ' ';
-    private static char LAST_LETTER_OF_COMPANY_NAME = ' ';
+    private static char firstLetterOfCompanyName = ' ';
+    private static char lastLetterOfCompanyName = ' ';
 
     public static void getCompanyCodeEvent() {
         ComboBoxProperties.getCompanies().getSelectionModel().selectedItemProperty()
@@ -26,8 +26,8 @@ public final class CompanyEvent {
                     for ( Company s: Company.values() ) {
                         if ( newCompany.equals( s.getCompanyName() ) ) {
                             companyCode = s.getCompanyCode();
-                            FIRST_LETTER_OF_COMPANY_NAME = newCompany.toUpperCase().charAt( 0 );
-                            LAST_LETTER_OF_COMPANY_NAME = newCompany.toUpperCase().charAt( newCompany.length() - 1 );
+                            firstLetterOfCompanyName = newCompany.toUpperCase().charAt( 0 );
+                            lastLetterOfCompanyName = newCompany.toUpperCase().charAt( newCompany.length() - 1 );
                         }
                     }
                 } );
@@ -35,10 +35,10 @@ public final class CompanyEvent {
 
 
     public static char getFirstLetterOfCompanyName(  ) {
-        return FIRST_LETTER_OF_COMPANY_NAME;
+        return firstLetterOfCompanyName;
     }
 
     public static int getLastLetterOfCompanyName(  ) {
-        return LAST_LETTER_OF_COMPANY_NAME;
+        return lastLetterOfCompanyName;
     }
 }

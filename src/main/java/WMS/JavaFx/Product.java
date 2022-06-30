@@ -94,10 +94,10 @@ public enum Product {
         return productCode;
     }
 
-    public final String productName;
-    public final int productCode;
+    private final String productName;
+    private final int productCode;
 
-    private Product( String productName, int productCode ) {
+    Product( String productName, int productCode ) {
         this.productName = productName;
         this.productCode = productCode;
     }

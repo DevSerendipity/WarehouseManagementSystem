@@ -35,10 +35,10 @@ public enum Company {
         return companyCode;
     }
 
-    public final String companyName;
-    public final int companyCode;
+    private final String companyName;
+    private final int companyCode;
 
-    private Company( String companyName, int companyCode ) {
+    Company( String companyName, int companyCode ) {
         this.companyName = companyName;
         this.companyCode = companyCode;
     }
