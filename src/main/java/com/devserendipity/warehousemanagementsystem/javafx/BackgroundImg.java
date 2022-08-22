@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 
 public class BackgroundImg {
     public Background getBackgroundImage() throws FileNotFoundException {
-        FileInputStream input = new FileInputStream( "src/main/resources/images/background.jpeg" );
+        FileInputStream input = new FileInputStream( "src/main/resources/Images/background.jpeg" );
         Image image = new Image( input );
 
         BackgroundImage backgroundimage = new BackgroundImage( image, BackgroundRepeat.NO_REPEAT,
