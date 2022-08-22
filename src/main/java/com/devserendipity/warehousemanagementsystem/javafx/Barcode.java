@@ -27,7 +27,7 @@ public class Barcode {
                                                                    BufferedImage.TYPE_BYTE_BINARY, false, 0);
             code128.generateBarcode(canvas, myString);
             canvas.finish();
-            FileOutputStream fos = new FileOutputStream("src/main/resources/Output/" + image_name);
+            FileOutputStream fos = new FileOutputStream("src/main/resources/Images/BarcodeImages/" + image_name);
             fos.write(baos.toByteArray());
             fos.flush();
             fos.close();
