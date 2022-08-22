@@ -1,14 +1,16 @@
-package wms.javafx;
+package com.devserendipity.warehousemanagementsystem.javafx;
 
+import com.devserendipity.warehousemanagementsystem.javafx.event.CompanyEvent;
+import com.devserendipity.warehousemanagementsystem.javafx.event.ProductsEvent;
 import javafx.scene.control.ComboBox;
-import wms.javafx.event.CompanyEvent;
-import wms.javafx.event.ProductsEvent;
 
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class ComboBoxProperties {
+
+    public ComboBoxProperties() {}
     private static final Map<String, String[]> KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS = new TreeMap<>();
     private static final ComboBox<String> COMPANIES = new ComboBox<>();
     private static final ComboBox<String> PRODUCTS = new ComboBox<>();
@@ -51,14 +53,14 @@ public class ComboBoxProperties {
     }
 
     public void initializeComboBoxes() {
-        getStorageArea().getItems().addAll( "Area 1", "Area 2" );
-        getWarehouseRow().getItems().addAll( "A1", "A2", "B1", "B2" );
-        getRowArea().getItems().addAll( "RA1", "RA2", "RA3" );
-        getShelf().getItems().addAll( "A", "B", "C" );
-        getBin().getItems().addAll( 1, 2, 3 );
-        getCompanies().getItems().setAll( new ArrayList<>( KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS.keySet() ) );
-        getCompanies().setOnAction( e -> getProducts().getItems().setAll( KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS.get(
-                getCompanies().getSelectionModel().getSelectedItem() ) ) );
+        getStorageArea().getItems().addAll("Area 1", "Area 2");
+        getWarehouseRow().getItems().addAll("A1", "A2", "B1", "B2");
+        getRowArea().getItems().addAll("RA1", "RA2", "RA3");
+        getShelf().getItems().addAll("A", "B", "C");
+        getBin().getItems().addAll(1, 2, 3);
+        getCompanies().getItems().setAll(new ArrayList<>(KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS.keySet()));
+        getCompanies().setOnAction(e -> getProducts().getItems().setAll(KEY_VALUES_PAR_FOR_COMPANIES_AND_PRODUCTS.get(
+                getCompanies().getSelectionModel().getSelectedItem())));
         CompanyEvent.getCompanyCodeEvent();
         ProductsEvent.getProductCodeEvent();
     }
