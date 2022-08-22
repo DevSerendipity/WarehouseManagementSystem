@@ -33,7 +33,7 @@ public class RetrieveSKU extends Application {
                                    ComboBoxProperties.getBin().getValue(), ComboBoxProperties.getCompanies().getValue(),
                                    CompanyEvent.getCompanyCode(), ComboBoxProperties.getProducts().getValue(),
                                    ProductsEvent.getProductCode(), barcode.getSKU(),
-                                   "src/main/resources/Output/BarcodeImage.png");
+                                   "src/main/resources/Images/BarcodeImages/BarcodeImage.png");
     }
 
     private void loadingProperties() throws IOException {
