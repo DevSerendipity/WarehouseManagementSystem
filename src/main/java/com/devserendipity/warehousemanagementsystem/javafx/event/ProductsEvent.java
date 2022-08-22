@@ -1,19 +1,14 @@
-package wms.javafx.event;
+package com.devserendipity.warehousemanagementsystem.javafx.event;
 
-import wms.javafx.ComboBoxProperties;
-import wms.javafx.Company;
+import com.devserendipity.warehousemanagementsystem.javafx.ComboBoxProperties;
+import com.devserendipity.warehousemanagementsystem.javafx.Company;
 
 public final class ProductsEvent {
 
-    private ProductsEvent() {
-
-    }
-
     private static int productCode;
-
     public static void getProductCodeEvent() {
         ComboBoxProperties.getProducts().getSelectionModel().selectedItemProperty()
-                .addListener( ( selectedProduct, oldProduct, newProduct ) -> {
+                          .addListener( ( selectedProduct, oldProduct, newProduct ) -> {
                     for ( Company s: Company.values() ) {
                         if ( newProduct.equals( s.getCompanyName() ) ) {
                             productCode = s.getCompanyCode();
@@ -21,7 +16,6 @@ public final class ProductsEvent {
                     }
                 } );
     }
-
     public static int getProductCode() {
         return productCode;
     }
