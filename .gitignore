@@ -5,7 +5,7 @@
 ### Resource folder ###
 
 src/main/resources/mockData
-src/main/resources/Output
+src/main/resources/Images/BarcodeImages
 src/main/resources/static
 src/main/resources/templates
 
